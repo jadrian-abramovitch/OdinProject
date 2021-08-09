@@ -13,15 +13,6 @@ function addBookToLibrary(book) {
     update_table();
 }
 
-const book1 = new Book("Hobbit", "Toklein", "295", "yes");
-addBookToLibrary(book1);
-
-const book2 = new Book("LOTR1", "Toklein", "700", "yes");
-addBookToLibrary(book2);
-
-const book3 = new Book("LOTR2", "Toklein", "650", "no");
-addBookToLibrary(book3);
-
 function createTable(){
     let body = document.body;
     let tbl = document.createElement('table');
@@ -149,4 +140,16 @@ function update_table() {
     createTable();
 }
 
+function addInitialData() {
+    const book1 = new Book("Hobbit", "Toklein", "295", "yes");
+    addBookToLibrary(book1);
+    
+    const book2 = new Book("LOTR1", "Toklein", "700", "yes");
+    addBookToLibrary(book2);
+    
+    const book3 = new Book("LOTR2", "Toklein", "650", "no");
+    addBookToLibrary(book3);
+}
+
+addInitialData();
 addBookButton();
