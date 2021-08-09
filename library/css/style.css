@@ -1,8 +1,30 @@
 body {
-    background-color: #0080ff;
+    background-color: #fff;
 }
 
 h1 {
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    /* padding: 5px 10px 5px; */
 }
+
+h2 {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    /* padding: 5px 5px 5px; */
+}
+
+thead {
+    background-color: #66ccff;
+}
+
+table, th, td {
+    border: 1px solid black;
+    /* vertical-align: bottom; */
+}
+
+td {
+    vertical-align: bottom;
+}
+

@@ -26,27 +26,26 @@ function createTable(){
     let body = document.body;
     let tbl = document.createElement('table');
     tbl.setAttribute("id", "book table");
-    tbl.style.width = "100px";
-    tbl.style.border = "1px solid black";
 
     let header = tbl.createTHead();
     let row = header.insertRow();
     for (let key in myLibrary[0]) {
         let th = row.insertCell();
-        th.appendChild(document.createTextNode(key));
-        th.style.border = "1px solid black";
+        h1 = document.createElement("h1");
+        h1.appendChild(document.createTextNode(key));
+        th.appendChild(h1);
     }
 
     let th = row.insertCell();
-    th.appendChild(document.createTextNode("Delete"));
-    th.style.border = "1px solid black";
+    let tbody = tbl.createTBody();
 
     for (let i = 0; i < myLibrary.length; i++) {
-        let tr = tbl.insertRow();
+        let tr = tbody.insertRow();
         for (let key in myLibrary[i]) {
             let td = tr.insertCell();
-            td.appendChild(document.createTextNode(myLibrary[i][key]));
-            td.style.border = "1px solid black";
+            let h2 = document.createElement("h2");
+            h2.appendChild(document.createTextNode(myLibrary[i][key]));
+
 
             if (key === "read") {
                 let update_button = document.createElement("button");
@@ -55,18 +54,21 @@ function createTable(){
                 update_button.addEventListener("click", function() {
                     update_read_value(update_button.id);
                 })
-                td.appendChild(update_button);
+                h2.appendChild(update_button);
             }
+
+            td.appendChild(h2);
         }
         let td = tr.insertCell();
+        let h2 = document.createElement("h2");
         let delete_button = document.createElement("button");
         delete_button.setAttribute("id", i);
         delete_button.innerHTML = "Delete";
         delete_button.addEventListener("click", function() {
             delete_book(delete_button.id);
         })
-        td.appendChild(delete_button);
-        td.style.border = "1px solid black";
+        h2.appendChild(delete_button);
+        td.appendChild(h2);
     }
     body.appendChild(tbl);
 
