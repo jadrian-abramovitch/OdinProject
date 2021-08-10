@@ -1,0 +1,8 @@
+table, th, td {
+    border: 1px solid black;
+    /* vertical-align: bottom; */
+}
+
+td {
+    vertical-align: bottom;
+}
